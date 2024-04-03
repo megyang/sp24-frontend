@@ -30,7 +30,7 @@ const calendarStyles = {
         cursor: 'pointer',
         fontWeight: 'bold',
         fontSize: 'large',
-        color: '#444', // Dark gray color for the header text
+        color: '#444',
     },
     row: {
         display: 'flex',
@@ -75,7 +75,7 @@ const calendarStyles = {
         margin: '0',
         textTransform: 'uppercase',
         fontFamily: 'Montserrat, sans-serif',
-        color: '#8E8E8E', // Dark gray color for the header text
+        color: '#8E8E8E',
     },
 };
 const Calendar = () => {
@@ -166,17 +166,17 @@ const Calendar = () => {
                             <span style={{ ...calendarStyles.number, margin: '10px 0 0 10px' }}>{formattedDate}</span>
                             <div
                                 style={{
-                                    backgroundColor: 'pink', // Baby blue background color
-                                    color: 'black', // Black text color
+                                    backgroundColor: 'pink',
+                                    color: 'black',
                                     textAlign: 'center',
                                     fontSize: '0.85em',
                                     borderRadius: '4px',
                                     padding: '2px 4px',
                                     position: 'absolute',
-                                    top: '20%', // Positioning the event div below the number
-                                    left: '0', // Align with the left edge of the cell
-                                    width: '95%', // Width equal to the cell
-                                    transform: 'translateY(50%)', // Center vertically
+                                    top: '20%',
+                                    left: '0',
+                                    width: '95%',
+                                    transform: 'translateY(50%)',
                                 }}
                             >
                                 formal
