@@ -7,7 +7,7 @@ const gridStyles = {
         margin: '0 auto',
         maxWidth: '1200px',
         minHeight:'500px',
-        backgroundImage: `url(${background})`,
+        backgroundColor: 'transparent',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',

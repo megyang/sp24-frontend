@@ -222,7 +222,7 @@ const Calendar = () => {
         return <div>{rows}</div>;
     };
     return (
-        <div className="background">
+        <div>
             <div style={calendarStyles.calendar}>
                 {renderHeader()}
                 {renderDays()}
