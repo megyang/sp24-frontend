@@ -63,11 +63,10 @@ function App() {
                     <SearchEvents viewMode={viewMode} setViewMode={setViewMode}/>
                     <CategoryFilter/>
                     <div className="content-container">
-                        {viewMode === 'grid' ? <ImageGrid images={images}/> : <Calendar/>}
+                        {viewMode === 'grid' ? <Calendar />: <ImageGrid images={images}/> }
                     </div>
                 </div>
             </Router>
-            <ImageGrid images={images}/>
         </div>
 
     );
