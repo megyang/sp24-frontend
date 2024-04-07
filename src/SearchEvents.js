@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons'; // Import the search icon
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const SearchEvents = ({ viewMode, setViewMode }) => {
     const [searchQuery, setSearchQuery] = useState('');
-    const [ordering, setOrdering] = useState('Ordering');
-    const [time, setTime] = useState('Time');
-    const [location, setLocation] = useState('Location');
+    const [ordering, setOrdering] = useState('');
+    const [time, setTime] = useState('');
+    const [location, setLocation] = useState('');
 
     const containerStyle = {
         display: 'flex',
@@ -35,16 +35,16 @@ const SearchEvents = ({ viewMode, setViewMode }) => {
         borderRadius: '4px',
         width: '100%',
         maxWidth: '200px',
-        background: '#efefef',
+        background: 'white',
         color: '#555',
         fontFamily: '"Baloo 2", cursive',
         fontWeight: 'bold',
         outline: 'none',
-        flex: '1' // Allow input to grow to fill available space
+        flex: '1'
     };
 
     const iconStyle = {
-        marginLeft: '-25px', // Adjust to overlay icon on input field
+        marginLeft: '-25px',
 
         cursor: 'pointer'
     };
@@ -53,7 +53,7 @@ const SearchEvents = ({ viewMode, setViewMode }) => {
         border: '0px solid #ccc',
         padding: '10px 15px',
         borderRadius: '4px',
-        background: '#efefef',
+        background: 'white',
         color: '#555',
         fontFamily: '"Baloo 2", cursive',
         fontWeight: 'bold',
@@ -98,15 +98,34 @@ const SearchEvents = ({ viewMode, setViewMode }) => {
                     <FontAwesomeIcon icon={faSearch} style={iconStyle} />
                 </div>
                 <select style={dropdownStyle} value={ordering} onChange={e => setOrdering(e.target.value)}>
-                    <option value="Ordering">Ordering</option>
+                    <option value="">Ordering</option>
+                    <option value="Trending">Trending</option>
+                    <option value="Alphabetical">Alphabetical</option>
+                    <option value="Random">Random</option>
                 </select>
                 <select style={dropdownStyle} value={time} onChange={e => setTime(e.target.value)}>
-                    <option value="Time">Time</option>
-                    {/* Add other options here */}
+                    <option value="">Time</option>
+                    <option value="All">All</option>
+                    <option value="Today">Today</option>
+                    <option value="This week">This week</option>
+                    <option value="This month">This month</option>
                 </select>
                 <select style={dropdownStyle} value={location} onChange={e => setLocation(e.target.value)}>
-                    <option value="Location">Location</option>
-                    {/* Add other options here */}
+                    <option value="">Location</option>
+                    <option value="Rodin">Rodin</option>
+                    <option value="Harnwell">Harnwell</option>
+                    <option value="Harrison">Harrison</option>
+                    <option value="NCHW">NCHW</option>
+                    <option value="Hill">Hill</option>
+                    <option value="Lauder">Lauder</option>
+                    <option value="KCECH">KCECH</option>
+                    <option value="Quad">Quad</option>
+                    <option value="Houston Hall">Houston Hall</option>
+                    <option value="Fisher Bennett">Fisher Bennett</option>
+                    <option value="Iron Gate Theatre">Iron Gate Theatre</option>
+                    <option value="Annenberg">Annenberg</option>
+                    <option value="High Rise Fields">High Rise Fields</option>
+                    <option value="Off-campus">Off-campus</option>
                 </select>
             </div>
             <div style={toggleContainerStyle}>

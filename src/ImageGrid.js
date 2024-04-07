@@ -1,11 +1,16 @@
 import React, { useRef, useState, useEffect } from 'react';
+import background from "./images/paper.png";
 
 const gridStyles = {
     imageGrid: {
         position: 'relative',
         margin: '0 auto',
         maxWidth: '1200px',
-        backgroundColor: 'transparent',
+        minHeight:'500px',
+        backgroundImage: `url(${background})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
     },
     gridItem: {
         position: 'relative',
@@ -48,6 +53,7 @@ const ImageGrid = ({ images }) => {
     const [hoveredIndex, setHoveredIndex] = useState(null); // Index of hovered image
 
     useEffect(() => {
+
         const handleResize = () => {
             // Calculate number of columns based on container width
             const containerWidth = columnRefs.current[0].current.parentNode.offsetWidth;
@@ -72,13 +78,8 @@ const ImageGrid = ({ images }) => {
                     <div
                         key={index}
                         style={{ ...gridStyles.gridItem, ...(index === hoveredIndex && gridStyles.gridItemHovered) }}
-                        onMouseEnter={() => setHoveredIndex(index)}
-                        onMouseLeave={() => setHoveredIndex(null)}
                     >
                         <img src={image.src} alt={image.alt} style={gridStyles.image} />
-                        <div style={gridStyles.imageText}>
-                            DATE TIME PLACE {/* Add your text here */}
-                        </div>
                     </div>
                 );
 
@@ -98,16 +99,18 @@ const ImageGrid = ({ images }) => {
     }, [images, columns, hoveredIndex]);
 
     return (
-        <div className="red">
+        <div>
             <div style={gridStyles.imageGrid}>
                 {[...Array(columns)].map((_, index) => (
-                    <div key={index} ref={columnRefs.current[index]} style={{ width: `${100 / columns}%`, float: 'left' }}>
+                    <div key={index} ref={columnRefs.current[index]}
+                         style={{width: `${100 / columns}%`, float: 'left'}}>
                         {columnElements[index]}
                     </div>
                 ))}
             </div>
 
-        </div>
+            </div>
+
     );
 };
 

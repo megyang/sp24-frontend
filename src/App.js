@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import NavBar from "./NavBar";
-import {BrowserRouter as Router} from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import Header from "./Header";
 import SearchEvents from "./SearchEvents";
 import CategoryFilter from "./CategoryFilter";
@@ -25,8 +25,8 @@ import image17 from './images/filler17.jpg';
 import image18 from './images/filler18.jpg';
 import image19 from './images/filler19.jpg';
 import Calendar from "./Calendar";
-import {useState} from "react";
-import background from "./images/paper.png"
+import { useState } from "react";
+import background from "./images/paper.png";
 
 const images = [
     { src: image1, alt: 'Image 1' },
@@ -53,20 +53,24 @@ function App() {
     const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'calendar'
 
     return (
-    <div className="App" style={{backgroundImage: `url(${background})`}}>
-        <Router>
-            <div className="background">
-                <NavBar />
-                <Header />
-                <SearchEvents viewMode={viewMode} setViewMode={setViewMode} />
-                <CategoryFilter />
-                {viewMode === 'grid' ? <Calendar /> : <ImageGrid images={images}/>}
 
-            </div>
+        <div className="App">
 
-        </Router>
-    </div>
-  );
+            <Router>
+                <div>
+                    <NavBar/>
+                    <Header/>
+                    <SearchEvents viewMode={viewMode} setViewMode={setViewMode}/>
+                    <CategoryFilter/>
+                    <div className="content-container">
+                        {viewMode === 'grid' ? <ImageGrid images={images}/> : <Calendar/>}
+                    </div>
+                </div>
+            </Router>
+            <ImageGrid images={images}/>
+        </div>
+
+    );
 }
 
 export default App;

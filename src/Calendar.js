@@ -43,7 +43,7 @@ const calendarStyles = {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-start',
-        backgroundColor: '#efefef',
+        backgroundColor: 'white',
         borderRadius: '10px',
     },
     number: {

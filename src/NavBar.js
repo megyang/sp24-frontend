@@ -1,9 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ovalImage from './images/oval.png';
 import sparkImage from './images/spark.png'; // Import the spark image
 import { useLocation } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 const styles = {
+    iconSpacing: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        gap:'5px',
+        alignItems: 'center',
+    },
     navBar: {
         display: 'flex',
         justifyContent: 'space-between',
@@ -66,6 +74,7 @@ const styles = {
         cursor: 'pointer',
         fontFamily: "'Baloo 2', cursive",
         fontWeight: 'bold',
+        marginLeft: '22px'
     },
     lineContainer: {
         height: '10px',
@@ -84,6 +93,11 @@ const styles = {
 
 const NavBar = () => {
     const location = useLocation();
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const handleLogin = () => {
+        setIsAuthenticated(true);
+    };
+
     const isActive = (path) => location.pathname === path;
 
     return (
@@ -91,7 +105,7 @@ const NavBar = () => {
             <nav style={styles.navBar}>
                 <span style={styles.logo}>
                     By Penn Spark
-                    <img src={sparkImage} alt="Penn Spark" style={styles.sparkImage} /> {/* Add the spark image */}
+                    <img src={sparkImage} alt="Penn Spark" style={styles.sparkImage} />
                 </span>
                 <div style={styles.navItems}>
                     <a href="/explore" style={{ ...styles.navItem, ...(isActive('/explore') ? styles.navItemActive : {}) }}>
@@ -100,7 +114,19 @@ const NavBar = () => {
                     <a href="/about" style={{ ...styles.navItem, ...(isActive('/about') ? styles.navItemActive : {}) }}>
                         About
                     </a>
-                    <button style={styles.button}>Club Login</button>
+                    {isAuthenticated ? (
+                    <a href="/profile" style={{ ...styles.navItem, ...(isActive('/profile') ? styles.navItemActive : {}) }}>
+                        <div style={styles.iconSpacing}>
+                            <FontAwesomeIcon icon={faUser} />
+                            <span> Organizer</span>
+
+                        </div>
+
+                    </a>
+
+                    ) : (
+                        <button onClick={handleLogin} style={styles.button}>Club Login</button>
+                    )}
                 </div>
             </nav>
             <div style={styles.lineContainer}>
