@@ -6,7 +6,7 @@ const gridStyles = {
         position: 'relative',
         margin: '0 auto',
         maxWidth: '1200px',
-        minHeight:'500px',
+        minHeight:'1200000000px',
         backgroundColor: 'transparent',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
