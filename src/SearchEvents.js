@@ -59,7 +59,7 @@ const SearchEvents = ({ viewMode, setViewMode }) => {
         fontWeight: 'bold',
         outline: 'none',
         cursor: 'pointer',
-        marginLeft: '30px' // Add a little space between dropdowns
+        marginLeft: '30px'
     };
 
 

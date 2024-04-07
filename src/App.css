@@ -1,9 +1,9 @@
 .App {
   text-align: center;
   padding: 0px 30px 0px 30px;
-  background-image: url('./images/paper.png'); /* Set background image */
-  background-size: cover; /* Cover the entire container */
-  background-position: center top; /* Center the background image */
+  background-image: url('./images/paper.png');
+  background-size: cover;
+  background-position: center top;
   background-attachment: fixed;
 }
 .background-wrapper {
@@ -50,8 +50,8 @@
 }
 
 .calendar {
-  padding: 0 20px; /* Padding on sides */
-  width: calc(100% - 40px); /* Full width minus padding */
+  padding: 0 20px;
+  width: calc(100% - 40px);
 }
 
 .background {

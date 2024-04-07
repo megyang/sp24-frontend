@@ -55,12 +55,10 @@ const ImageGrid = ({ images }) => {
     useEffect(() => {
 
         const handleResize = () => {
-            // Calculate number of columns based on container width
             const containerWidth = columnRefs.current[0].current.parentNode.offsetWidth;
-            const newColumns = Math.ceil(containerWidth / 320); // Adjust the width as needed
-            setColumns(newColumns || 1); // Ensure at least one column
+            const newColumns = Math.ceil(containerWidth / 320);
+            setColumns(newColumns || 1); // ensure at least one column
 
-            // Reset column elements
             setColumnElements(Array.from({ length: newColumns }, () => []));
         };
 
@@ -71,7 +69,7 @@ const ImageGrid = ({ images }) => {
     }, []);
 
     useEffect(() => {
-        // Function to distribute items to columns after all items have been rendered
+        // distribute items to columns after all items have been rendered
         const distributeItemsToColumns = () => {
             images.forEach((image, index) => {
                 const item = (

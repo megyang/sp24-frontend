@@ -138,7 +138,7 @@ const Calendar = () => {
                 const isToday = isSameDay(day, new Date());
                 const isDisabled = !isSameMonth(day, monthStart);
 
-                if (day.getDay() === 3 && isSameMonth(day, monthStart)) { // Checks if the day is Wednesday and in the current month
+                if (day.getDay() === 3 && isSameMonth(day, monthStart)) { // dummy event check
                     days.push(
                         <div
                             style={{

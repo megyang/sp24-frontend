@@ -23,13 +23,13 @@ const styles = {
     logo: {
         fontSize: '15px',
         fontWeight: 'bold',
-        display: 'flex', // Ensure inline elements are aligned properly
-        alignItems: 'center', // Center align the items
+        display: 'flex',
+        alignItems: 'center',
     },
     sparkImage: {
         marginBottom: '20px',
-        width: '20px', // Adjust the width of the image as needed
-        height: 'auto', // Maintain aspect ratio
+        width: '20px',
+        height: 'auto',
     },
     navItems: {
         display: 'flex',
